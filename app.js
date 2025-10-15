@@ -4,7 +4,7 @@ const app = express();
 
 app.use(express.static('public'));
 
-const PORT = 3000;
+const PORT = 3002;
 
 app.get('/', (req, res) => {
     console.log('the meta dirname:', import.meta.dirname);
