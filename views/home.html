@@ -6,46 +6,59 @@
     <title>Contact Form</title>
     <link rel="stylesheet" href="styles/home.css" />
     <link rel="icon" href="images/html-tag.png">
+    <script src="js/contact-form.js" defer></script>
   </head>
   <body>
     <form class="contact-form">
     <h2>Contact Form</h2>
+      <div>
+        
+      </div>
       <div class="first-form-section">
         <div class="top-input">
-          <label>First name</label>
-          <input />
+          <label>First name<span class="required-asterisks">*</span></label>
+          <input id="first_name_input" class="top-input-field required"/>
+          <p>First name is required</p>
         </div>
         <div class="top-input">
-          <label>Last name</label>
-          <input />
+          <label>Last name<span class="required-asterisks">*</span></label>
+          <input class="top-input-field required"/>
+          <p>Last name is required</p>
         </div>
         <div class="top-input">
           <label>Job title</label>
-          <input />
+          <input class="top-input-field"/>
         </div>
         <div class="top-input">
           <label>Company</label>
-          <input />
+          <input class="top-input-field" />
         </div>
         <div class="top-input">
           <label>LinkedIn URL</label>
-          <input />
+          <input class="top-input-field" id="linkedIn_input_field" />
+          <p id="linkedIn-error">This is an improper LinkedIn URL.</p>
         </div>
         <div class="top-input">
           <label>Email</label>
-          <input />
+          <input class="top-input-field" id="email-input"/>
+          <p id="email-input-error-message">Please enter your email correctly.</p>
         </div>
       </div>
 
       <div class="second-form-section">
-        <div class="top2-input">
-          <label>How did we meet?</label>
-          <input />
+        <div class="top2-dropdown">
+          <label>How did we meet?<span class="required-asterisks">*</span></label>
+          <select id="meetup-dropdown" class="required">
+            <option value="LinkedIn">LinkedIn</option>
+            <option value="Conference">Conference</option>
+            <option value="School">School</option>
+            <option value="Other">Other</option>
+          </select>
         </div>
 
-        <div class="top2-input">
+        <div id="top2-input">
           <label>Other (please specify)</label>
-          <input />
+          <input id="other-meetup-input"/>
         </div>
       </div>
 
@@ -56,17 +69,17 @@
 
       <div class="fourth-form-section">
         <div class="first-checkbox">
-          <input type="checkbox" />
+          <input type="checkbox" id="mailing-checkbox"/>
           <label>Please add me to your mailing list.</label>
         </div>
 
-        <div>
+        <div id="choose-email-format">
             <label>Choose an email format:</label>
             <input type="radio" /><label>HTML</label> <input type="radio" /><label>Text</label>
         </div>
       </div>
 
-      <button class="submit-button">Submit</button>
+      <button id="submit-form-button">Submit</button>
     </form>
     <a href="https://github.com/ryanrmills/sdev305-contact-form">Link to Contact Form Github Repo</a>
   </body>
