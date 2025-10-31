@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+<body>
+    <% guests.map((guest) => { %>
+        <%= guest.fname %>
+        <%= guest.lname %>
+        <%= guest.job_title %>
+        <%= guest.company %>
+        <%= guest.linkedIn %>
+        <%= guest.email %>
+        <%= guest.meet_type %>
+        <%= guest.other_meetup %>
+        <%= guest.message %>
+        <%= guest.isMailList %>
+        <%= guest.emailType %>
+    <% }) %>
+</body>
+</html>

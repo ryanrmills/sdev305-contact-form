@@ -9,7 +9,7 @@
     <script src="js/contact-form.js" defer></script>
   </head>
   <body>
-    <form class="contact-form">
+    <form class="contact-form" action="submit-form" method="POST">
     <h2>Contact Form</h2>
       <div>
         
@@ -17,30 +17,30 @@
       <div class="first-form-section">
         <div class="top-input">
           <label>First name<span class="required-asterisks">*</span></label>
-          <input id="first_name_input" class="top-input-field required"/>
+          <input name="fname" id="first_name_input" class="top-input-field required"/>
           <p>First name is required</p>
         </div>
         <div class="top-input">
           <label>Last name<span class="required-asterisks">*</span></label>
-          <input class="top-input-field required"/>
+          <input name="lname" class="top-input-field required"/>
           <p>Last name is required</p>
         </div>
         <div class="top-input">
           <label>Job title</label>
-          <input class="top-input-field"/>
+          <input name="job_title" class="top-input-field"/>
         </div>
         <div class="top-input">
           <label>Company</label>
-          <input class="top-input-field" />
+          <input name="company" class="top-input-field" />
         </div>
         <div class="top-input">
           <label>LinkedIn URL</label>
-          <input class="top-input-field" id="linkedIn_input_field" />
+          <input name="linkedIn" class="top-input-field" id="linkedIn_input_field" />
           <p id="linkedIn-error">This is an improper LinkedIn URL.</p>
         </div>
         <div class="top-input">
           <label>Email</label>
-          <input class="top-input-field" id="email-input"/>
+          <input name="email" class="top-input-field" id="email-input"/>
           <p id="email-input-error-message">Please enter your email correctly.</p>
         </div>
       </div>
@@ -48,7 +48,8 @@
       <div class="second-form-section">
         <div class="top2-dropdown">
           <label>How did we meet?<span class="required-asterisks">*</span></label>
-          <select id="meetup-dropdown" class="required">
+          <select name="meet_type" id="meetup-dropdown" class="required">
+            <option value="">Choose...</option>
             <option value="LinkedIn">LinkedIn</option>
             <option value="Conference">Conference</option>
             <option value="School">School</option>
@@ -58,28 +59,28 @@
 
         <div id="top2-input">
           <label>Other (please specify)</label>
-          <input id="other-meetup-input"/>
+          <input name="other_meetup" id="other-meetup-input"/>
         </div>
       </div>
 
       <div class="third-form-section">
         <label>Message</label>
-        <textarea></textarea>
+        <textarea name="message"></textarea>
       </div>
 
       <div class="fourth-form-section">
         <div class="first-checkbox">
-          <input type="checkbox" id="mailing-checkbox"/>
+          <input name="isMailList" type="checkbox" id="mailing-checkbox"/>
           <label>Please add me to your mailing list.</label>
         </div>
 
         <div id="choose-email-format">
             <label>Choose an email format:</label>
-            <input type="radio" /><label>HTML</label> <input type="radio" /><label>Text</label>
+            <input name="emailType" type="radio" /><label>HTML</label> <input name="emailType" type="radio" /><label>Text</label>
         </div>
       </div>
 
-      <button id="submit-form-button">Submit</button>
+      <button type="submit" id="submit-form-button">Submit</button>
     </form>
     <a href="https://github.com/ryanrmills/sdev305-contact-form">Link to Contact Form Github Repo</a>
   </body>

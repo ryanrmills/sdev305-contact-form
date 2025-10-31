@@ -36,6 +36,20 @@ meetupDropdown.addEventListener('change', (e) => {
 
 
 function linkedInCheck(value){
+    // if (document.getElementById('linkedIn_input_field').value.trim() === '' && meetupDropdown.value === 'LinkedIn') {
+    //     document.getElementById('linkedIn-error').style.opacity = '100%';
+    //     document.getElementById('linkedIn_input_field').style.border = '1px solid red';
+    // } else {
+    //     document.getElementById('linkedIn-error').style.opacity = '0%';
+    // }
+
+    if (value === '' && meetupDropdown.value === 'LinkedIn') {
+        document.getElementById('linkedIn-error').style.opacity = '100%';
+        document.getElementById('linkedIn_input_field').style.border = '1px solid red';
+    } else {
+        document.getElementById('linkedIn-error').style.opacity = '0%';
+    }
+
     if (value.substring(0, 24) !== "https://linkedin.com/in/" && value !== ''){
         document.getElementById('linkedIn-error').style.opacity = '100%';
         document.getElementById('linkedIn_input_field').style.border = '2px solid red';
@@ -45,6 +59,8 @@ function linkedInCheck(value){
         document.getElementById('linkedIn_input_field').style.border = '1px solid black';
         return true;
     }
+
+    
 }
 
 function emailCheck(value){
@@ -72,10 +88,11 @@ function emailCheck(value){
 function submitChecks(){
     let check = true;
 
-    linkedInCheck(document.getElementById('linkedIn_input_field').value);
+    
 
-    console.log("emailValue:", document.getElementById('email-input').value)
-    emailCheck(document.getElementById('email-input').value);
+    linkedInCheck(document.getElementById('linkedIn_input_field').value.trim());
+
+    emailCheck(document.getElementById('email-input').value.trim());
 
     const listOfTopInputs = document.querySelectorAll('.required');
 
@@ -90,16 +107,13 @@ function submitChecks(){
             }
         }
     });
-
+    console.log(check)
     return check;
 }
 
 
 submitButton.onclick = (e) => {
-    e.preventDefault();
     
     let didItPass = submitChecks();
-    if (!didItPass) {
-        return;
-    }
+    return didItPass;
 }
