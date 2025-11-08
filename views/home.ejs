@@ -1,87 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Form</title>
-    <link rel="stylesheet" href="styles/home.css" />
-    <link rel="icon" href="images/html-tag.png">
-    <script src="js/contact-form.js" defer></script>
-  </head>
-  <body>
-    <form class="contact-form" action="submit-form" method="POST">
-    <h2>Contact Form</h2>
-      <div>
-        
-      </div>
-      <div class="first-form-section">
-        <div class="top-input">
-          <label>First name<span class="required-asterisks">*</span></label>
-          <input name="fname" id="first_name_input" class="top-input-field required"/>
-          <p>First name is required</p>
-        </div>
-        <div class="top-input">
-          <label>Last name<span class="required-asterisks">*</span></label>
-          <input name="lname" class="top-input-field required"/>
-          <p>Last name is required</p>
-        </div>
-        <div class="top-input">
-          <label>Job title</label>
-          <input name="job_title" class="top-input-field"/>
-        </div>
-        <div class="top-input">
-          <label>Company</label>
-          <input name="company" class="top-input-field" />
-        </div>
-        <div class="top-input">
-          <label>LinkedIn URL</label>
-          <input name="linkedIn" class="top-input-field" id="linkedIn_input_field" />
-          <p id="linkedIn-error">This is an improper LinkedIn URL.</p>
-        </div>
-        <div class="top-input">
-          <label>Email</label>
-          <input name="email" class="top-input-field" id="email-input"/>
-          <p id="email-input-error-message">Please enter your email correctly.</p>
-        </div>
-      </div>
-
-      <div class="second-form-section">
-        <div class="top2-dropdown">
-          <label>How did we meet?<span class="required-asterisks">*</span></label>
-          <select name="meet_type" id="meetup-dropdown" class="required">
-            <option value="">Choose...</option>
-            <option value="LinkedIn">LinkedIn</option>
-            <option value="Conference">Conference</option>
-            <option value="School">School</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-
-        <div id="top2-input">
-          <label>Other (please specify)</label>
-          <input name="other_meetup" id="other-meetup-input"/>
-        </div>
-      </div>
-
-      <div class="third-form-section">
-        <label>Message</label>
-        <textarea name="message"></textarea>
-      </div>
-
-      <div class="fourth-form-section">
-        <div class="first-checkbox">
-          <input name="isMailList" type="checkbox" id="mailing-checkbox"/>
-          <label>Please add me to your mailing list.</label>
-        </div>
-
-        <div id="choose-email-format">
-            <label>Choose an email format:</label>
-            <input name="emailType" type="radio" /><label>HTML</label> <input name="emailType" type="radio" /><label>Text</label>
-        </div>
-      </div>
-
-      <button type="submit" id="submit-form-button">Submit</button>
-    </form>
-    <a href="https://github.com/ryanrmills/sdev305-contact-form">Link to Contact Form Github Repo</a>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Mills</title>
+    <link rel="icon" type="image/x-icon" href="assets/html-icon.png">
+    <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/home.css">
+</head>
+<body>
+    <%- include('partials/nav') %>
+    <main>
+        <header class="hero reveal">
+            <div class="hero-content">
+                <span class="hero-eyebrow">upcoming software engineer</span>
+                <h1>Ryan Mills</h1>
+                <div class="hero-actions">
+                    <a class="hero-cta" href="mailto:ryanroymills@gmail.com?&body=Hi%20Ryan,">Email me</a>
+                    <!-- <div class="contact-icon-list"> -->
+                        <a class="icon-link" href="https://www.linkedin.com/in/ryan-m-54a565227/" target="_blank" rel="noopener noreferrer">
+                            LinkedIn
+                        </a>
+                    <!-- </div> -->
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-frame">
+                    <div class="hero-frame-accent"></div>
+                    <img class="hero-img" src="assets/profilepic.jpg" height="400" alt="picture of Ryan Mills">
+                </div>
+                <div class="hero-bio-card">
+                    <p class="hero-bio-title">Currently</p>
+                    <p class="hero-bio-text">Finishing my bachelor’s degree and designing a data entry application to assist Green River College departments collaborate with each other to submit a finalized report for funding.</p>
+                </div>
+            </div>
+        </header>
+        <section class="section-card reveal education-section" id="education">
+            <div class="section-header">
+                <h2>Education</h2>
+            </div>
+            <article class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Green River College</h3>
+                    <p class="timeline-period">June 2025 &ndash; June 2027</p>
+                    <ul>
+                        <li>BAS in Computer Science (Expected June 2027)</li>
+                        <li>AAS in Data Analytics and Software Development (June 2025)</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+        <section class="section-card reveal skills-section" id="skills">
+            <div class="section-header">
+                <h2>Skills</h2>
+            </div>
+            <div class="skills-wrap">
+                <div>
+                    <h3>Languages &amp; Frameworks</h3>
+                    <p>JavaScript, Java, Python, PHP, React.js, Node.js, Express.js, Next.js, HTML, CSS.</p>
+                </div>
+                <div>
+                    <h3>Tooling &amp; Platforms</h3>
+                    <p>AWS, MySQL, Git, Linux, Networking, Data Visualization, Data Analysis, Agile/Scrum.</p>
+                </div>
+                <div>
+                    <h3>Testing &amp; Automation</h3>
+                    <p>JUnit, CI/CD workflows, troubleshooting complex distributed systems.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section-card reveal projects-section" id="projects">
+            <div class="section-header">
+                <h2>Projects</h2>
+            </div>
+            <article class="project-card">
+                <div class="project-meta">
+                    <h3><a>Data Entry Report Form</a></h3>
+                    <p class="project-period">September 2025 &ndash; December 2025</p>
+                    
+                </div>
+                <ul>
+                    <li>Created a data entry application that allows Green River College's department heads to collaborate in filling a yearly report.</li>
+                    <li>Developed using HTML/CSS, JavaScript, and Node backend.</li>
+                    <li>Implemented authentication using the college's Microsoft SSO for a seamless authentication process.</li>
+                </ul>
+            </article>
+            <article class="project-card">
+                <div class="project-meta">
+                    <h3><a href="https://discgolf.ryanmillsdev.com">Statmando Data Analytics Dashboard</a></h3>
+                    <p class="project-period">March 2025 &ndash; June 2025</p>
+                </div>
+                <ul>
+                    <li>Delivered an interactive disc golf player profile dashboard with dynamic charts and sortable stats drawn from 60k+ tournament rows.</li>
+                    <li>Designed RESTful PHP endpoints to serve event, round, and per-stat breakdowns to the frontend.</li>
+                    <li>Created a Gemini-powered chatbot that answers questions about disc golf performance metrics.</li>
+                    <li>Drove Agile ceremonies, code reviews, and cross-team collaboration to keep shipping momentum.</li>
+                </ul>
+            </article>
+        </section>
+        <section class="section-card reveal experience-section" id="experience">
+            <div class="section-header">
+                <h2>Experience</h2>
+            </div>
+            <div class="experience-wrap">
+                <article class="experience-card">
+                    <header>
+                        <h3>Cloud Support Engineer</h3>
+                        <p class="experience-meta">Amazon Web Services &bull; Sep 2022 &ndash; Dec 2023</p>
+                    </header>
+                    <ul>
+                        <li>Resolved 200+ customer tickets across CloudWatch, IAM, and KMS to stabilize production workloads.</li>
+                        <li>Debugged authentication flows, SSL certificates, and encryption key issues under tight SLAs.</li>
+                        <li>Advised customers on security best practices spanning Cognito, Secrets Manager, IAM, and ACM.</li>
+                    </ul>
+                </article>
+                <article class="experience-card">
+                    <header>
+                        <h3>Network Engineer Pre-apprentice</h3>
+                        <p class="experience-meta">TLG Learning &bull; Mar 2022 &ndash; Jun 2022</p>
+                    </header>
+                    <ul>
+                        <li>Earned CompTIA Linux+, Network+, and AWS CCP certifications in a fast-paced cohort.</li>
+                        <li>Configured and troubleshot routers, switches, and firewalls in lab environments.</li>
+                        <li>Built foundational expertise in secure HTTP/HTTPS operations and network design.</li>
+                    </ul>
+                </article>
+                <article class="experience-card">
+                    <header>
+                        <h3>Army Medic</h3>
+                        <p class="experience-meta">U.S. Army &bull; Feb 2019 &ndash; Aug 2022</p>
+                    </header>
+                    <ul>
+                        <li>Administered 3,000+ vaccines during the COVID-19 pandemic in support of public health efforts.</li>
+                        <li>Led patient intake and delivered comprehensive medical care in clinic and field settings.</li>
+                        <li>Raised battalion deployment readiness from 78% to 98% by managing 1,000+ medical profiles.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
 </html>

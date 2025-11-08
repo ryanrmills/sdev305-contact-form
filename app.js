@@ -13,16 +13,21 @@ let guests = [];
 const PORT = 3002;
 
 app.get('/', (req, res) => {
+    res.render('home');
+})
+
+app.get('/contact', (req, res) => {
     // console.log('the meta dirname:', import.meta.dirname);
     // res.sendFile(`${import.meta.dirname}/views/home.html`)
-    res.render('home')
+    res.render('contact')
 })
 
 app.post('/submit-form', (req, res) => {
+    req.body.datetime = new Date();
     const guest = req.body;
     console.log(guest);
     guests.push(guest);
-    res.render('confirm');
+    res.render('confirm', {guest});
 })
 
 app.get('/admin', (req, res) => {
@@ -30,5 +35,5 @@ app.get('/admin', (req, res) => {
 })
 
 app.listen(PORT, () => {
-    console.log(`listening on ${PORT}`);
+    console.log(`listening on http://localhost:${PORT}`);
 })

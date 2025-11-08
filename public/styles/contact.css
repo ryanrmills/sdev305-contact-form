@@ -1,0 +1,144 @@
+body {
+    margin: 0em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background-color: aliceblue;
+}
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    margin: 0em;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+
+    margin: 2em;
+
+    gap: 1em;
+    background-color: white;
+    padding:2em;
+    border-radius: 0.6em;
+    box-shadow: 0em 0.4em 1em gray;
+}
+
+.contact-form h2 {
+    margin: 0em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.first-form-section {
+    width: 100%;
+    display: flex;
+    /* grid-template-columns: auto auto auto; */
+    flex-wrap: wrap;
+    gap: 1em;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.top-input {
+    display: flex;
+    width: 30%;
+    min-height: 5em;
+    flex-direction: column;
+}
+
+.second-form-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.top2-dropdown {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+#top2-input {
+    display: none;
+    flex-direction: column;
+    width: 48%;
+}
+
+.third-form-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.third-form-section textarea {
+    height: 8rem;
+    resize: vertical;
+}
+
+.fourth-form-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+}
+
+.first-checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+#choose-email-format {
+    display: none;
+
+}
+
+#submit-form-button {
+    width: 100%;
+    height: 2.8rem;
+    border: none;
+    background-color: rgb(0, 132, 255);
+    color: white;
+    border-radius: 0.4em;
+    box-shadow: 0em 0.2em 0em black;
+}
+
+#submit-form-button:hover {
+    background-color: rgb(0, 78, 150);
+}
+
+#submit-form-button:active {
+    transform: translateY(0.1em);
+    box-shadow: 0em 0em 0em black;
+}
+
+.required-asterisks {
+    color: rgb(255, 39, 39);
+}
+
+.input_required_error {
+    border: 2px solid red;
+}
+
+#linkedIn-error {
+    display: flex;
+    color: red;
+    opacity: 0%;
+}
+
+#email-input-error-message {
+    display: flex;
+    color: red;
+    opacity: 0%;
+}
+

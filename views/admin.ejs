@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
     <link rel="icon" href="images/html-tag.png">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.4/css/dataTables.dataTables.min.css">
+    <script src="//code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="//cdn.datatables.net/2.3.4/js/dataTables.min.js"></script>
+    <script src="js/admin.js" defer></script>
+    <link rel="stylesheet" href="styles/nav.css">
 </head>
 <body>
-
+    <%- include('partials/nav') %>
+    <h1>Admin</h1>
     <p>This is the admin page</p>
-    <% guests.map((guest) => { %>
+    <!-- <% guests.map((guest) => { %>
+    <p>
         <%= guest.fname %>
         <%= guest.lname %>
         <%= guest.job_title %>
@@ -21,6 +28,44 @@
         <%= guest.message %>
         <%= guest.isMailList %>
         <%= guest.emailType %>
-    <% }) %>
+        <%= guest.datetime %>
+    </p>
+    <% }) %> -->
+
+    <table id="contacts-table">
+        <thead>
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Job title</th>
+                    <th>Company/Org</th>
+                    <th>LinkedIn</th>
+                    <th>Email</th>
+                    <th>Meet</th>
+                    <th>Other Meet</th>
+                    <th>Message</th>
+                    <th>Date/time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% guests.forEach(entry => { %>
+
+                <tr>
+                    <td><%= entry.fname %></td>
+                    <td><%= entry.lname%></td>
+                    <td><%= entry.job_title %></td>
+                    <td><%= entry.company %></td>
+                    <td><%= entry.linkedIn %></td>
+                    <td><%= entry.email %></td>
+                    <td><%= entry.meet_type %></td>
+                    <td><%= entry.other_meetup %></td>
+                    <td><%= entry.message %></td>
+                    <td><%= entry.datetime %></td>
+                </tr>
+
+                <% }); %>
+
+            </tbody>
+    </table>    
 </body>
 </html>

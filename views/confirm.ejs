@@ -5,11 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guest Confirmation</title>
     <link href="styles/confirm.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/nav.css">
 </head>
 <body>
-    <div class="confirm-div">
-        <h2>You have been added!</h2>
-        <a href="/">Go home</a>
-    </div>
+    <%- include('partials/nav') %>
+    <main class="confirm-page">
+        <section class="confirm-card">
+            <!-- <div class="confirm-icon" aria-hidden="true">✓</div> -->
+            <!-- <p class="confirm-eyebrow">Submission received</p> -->
+            <h1>You’re all set, <%= guest.fname %>!</h1>
+            <!-- <p class="confirm-message">We’ve saved your details and will follow up soon. Here’s a quick recap:</p> -->
+            <dl class="confirm-details">
+                <div>
+                    <dt>Name</dt>
+                    <dd><%= guest.fname %> <%= guest.lname %></dd>
+                </div>
+                <div>
+                    <dt>Title</dt>
+                    <dd><%= guest.job_title %></dd>
+                </div>
+                <div>
+                    <dt>Email</dt>
+                    <dd><%= guest.email %></dd>
+                </div>
+                <div>
+                    <dt>Meeting Type</dt>
+                    <dd><%= guest.meet_type %></dd>
+                </div>
+            </dl>
+            <a class="confirm-home" href="/">Back to home</a>
+        </section>
+    </main>
 </body>
 </html>
